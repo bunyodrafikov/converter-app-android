@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2018 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/currencyTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow android:background="@color/secondary">
+
+                    <TextView
+                        android:id="@+id/name_col"
+                        style="@style/tableColumns"
+                        android:baselineAligned="false" />
+
+                    <TextView
+                        android:id="@+id/buy_col"
+                        style="@style/tableColumns"
+                        android:text="@string/buy_price_column" />
+
+                    <TextView
+                        android:id="@+id/sell_col"
+                        style="@style/tableColumns"
+                        android:text="@string/sell_price_column" />
+                </TableRow>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary" />
+
+                <TableRow android:textAlignment="center">
+
+                    <TextView
+                        android:id="@+id/usd_name"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:text="@string/USD" />
+
+                    <TextView
+                        android:id="@+id/usd_buy"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:hint="@string/sample_value"
+                        android:textColorHint="#78909C" />
+
+                    <TextView
+                        android:id="@+id/usd_sell"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:hint="@string/sample_value"
+                        android:textColorHint="#78909C" />
+
+                </TableRow>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary" />
+
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/eur_name"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:text="@string/EUR" />
+
+                    <TextView
+                        android:id="@+id/eur_buy"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:hint="@string/sample_value"
+                        android:textColorHint="#78909C" />
+
+                    <TextView
+                        android:id="@+id/eur_sell"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:hint="@string/sample_value"
+                        android:textColorHint="#78909C" />
+
+                </TableRow>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary" />
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/rub_name"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:text="@string/RUB" />
+
+                    <TextView
+                        android:id="@+id/rub_buy"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:hint="@string/sample_value"
+                        android:textColorHint="#78909C" />
+
+                    <TextView
+                        android:id="@+id/rub_sell"
+                        style="@style/tableItems"
+                        android:gravity="center"
+                        android:hint="@string/sample_value"
+                        android:textColorHint="#78909C" />
+
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/refresh"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="@color/secondary"
+                android:clickable="true"
+                android:text="@string/refresh"
+                app:icon="@drawable/ic_refresh"
+                app:layout_constraintBottom_toTopOf="@id/input1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currencyTable" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/input1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/refresh">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/currencyField1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/currencyTable">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/currency1"
+                        android:layout_width="120dp"
+                        android:layout_height="55dp"
+                        android:hint="@string/from"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputField1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/currencyTable">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputValue1"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:hint="@string/value_1"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/input2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calcButtons">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/currencyField2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/currencyTable">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/currency2"
+                        android:layout_width="120dp"
+                        android:layout_height="55dp"
+                        android:focusedByDefault="true"
+                        android:hint="@string/to"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputField2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/currencyTable">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputValue2"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:hint="@string/value_2"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/calcButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input1">
+
+                <Button
+                    android:id="@+id/replace"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="37dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="50dp"
+                    android:backgroundTint="@color/secondary"
+                    android:contentDescription="@string/empty"
+                    android:rotation="90"
+                    app:icon="@drawable/ic_replace"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+
+                <Button
+                    android:id="@+id/calculate"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="110dp"
+                    android:backgroundTint="@color/secondary"
+                    android:clickable="true"
+                    android:text="@string/calculate"
+                    app:icon="@drawable/ic_calculate" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <Button
+                android:id="@+id/branches"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_margin="15dp"
+                android:layout_marginVertical="10dp"
+                android:backgroundTint="@color/secondary"
+                android:text="@string/display_branches"
+                app:icon="@drawable/ic_location"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/input2"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

@@ -15,26 +15,32 @@
   -->
 
 <resources>
-    <string name="app_name">Blur-O-Matic</string>
+    <string name="app_name">Currency Converter</string>
 
-    <!-- Titles -->
-    <string name="blur_title">Select Blur Amount</string>
+    <!-- Table Resources -->
+    <string name="buy_price_column">Buy Price</string>
+    <string name="sell_price_column">Sell Price</string>
 
-    <!-- Buttons -->
-    <string name="select_image">Select Image</string>
-    <string name="go">Go</string>
-    <string name="see_file">See File</string>
+    <!-- Currencies -->
+    <string name="USD">USD</string>
+    <string name="RUB">RUB</string>
+    <string name="EUR">EUR</string>
 
-    <!-- Content descriptions -->
-    <string name="description_image">The image to blur and save.</string>
+    <string-array name="currencies_array">
+        <item>UAH</item>
+        <item>USD</item>
+        <item>RUB</item>
+        <item>EUR</item>
+    </string-array>
 
-    <!-- Blur levels -->
-    <string name="blur_lv_1">A little blurred</string>
-    <string name="blur_lv_2">More blurred</string>
-    <string name="blur_lv_3">The most blurred</string>
-    <string name="cancel_work">Cancel Work</string>
+    <string name="sample_value">26.30</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="value_1">Count</string>
+    <string name="value_2">Count</string>
+    <string name="refresh">Refresh</string>
+    <string name="display_branches">Display Branches</string>
+    <string name="empty" />
+    <string name="calculate">Calculate</string>
 
-    <!-- Messages -->
-    <string name="set_permissions_in_settings">Go to Settings -> Apps and Notifications ->
-        WorkManager Demo -> App Permissions and grant access to Storage.</string>
 </resources>
